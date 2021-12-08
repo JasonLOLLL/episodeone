@@ -10,6 +10,4 @@ public class PurpleGolemEntityRenderer extends GeoEntityRenderer<PurpleGolemEnti
         super(ctx, new PurpleGolemEntityModel());
         this.shadowRadius = 0.7F;
     }
-
-
 }

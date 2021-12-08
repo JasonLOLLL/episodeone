@@ -2,6 +2,7 @@ package com.jasonjat.episodeone.registry;
 
 import com.jasonjat.episodeone.entity.CopperGolemEntity;
 import com.jasonjat.episodeone.entity.PurpleGolemEntity;
+import com.jasonjat.episodeone.entity.SpongebobBossEntity;
 import com.jasonjat.episodeone.util.ModUtil;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -24,8 +25,15 @@ public class EntityRegistry {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PurpleGolemEntity::new).dimensions(EntityDimensions.fixed(1F, 2F)).build()
     );
 
+    public static final EntityType<SpongebobBossEntity> SPONGEBOB_BOSS_ENTITY =  Registry.register(
+            Registry.ENTITY_TYPE,
+            ModUtil.id("spongebob_boss"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SpongebobBossEntity::new).dimensions(EntityDimensions.fixed(2F, 3.6F)).build()
+    );
+
     public static void register() {
         FabricDefaultAttributeRegistry.register(COPPER_GOLEM_ENTITY, CopperGolemEntity.createMobAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25));
         FabricDefaultAttributeRegistry.register(PURPLE_GOLEM_ENTITY, PurpleGolemEntity.createIronGolemAttributes());
+        FabricDefaultAttributeRegistry.register(SPONGEBOB_BOSS_ENTITY, PurpleGolemEntity.createIronGolemAttributes());
     }
 }

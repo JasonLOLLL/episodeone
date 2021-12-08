@@ -9,6 +9,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -30,8 +31,11 @@ public class CopperAxe extends AxeItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        Objects.requireNonNull(Objects.requireNonNull(target.getServer()).getWorld(target.getWorld().getRegistryKey())).spawnParticles(ParticleRegistry.COPPER_FLAME, target.getX(), target.getY(), target.getZ(), 75, 1,1,1, 0.2);
-        Objects.requireNonNull(Objects.requireNonNull(target.getServer()).getWorld(target.getWorld().getRegistryKey())).spawnParticles(ParticleRegistry.BLUE_FLAME, target.getX(), target.getY(), target.getZ(), 75, 1,1,1, 0.2);
+        ServerWorld serverWorld = (ServerWorld) target.getEntityWorld();
+
+        serverWorld.spawnParticles(ParticleRegistry.COPPER_FLAME, target.getX(), target.getY(), target.getZ(), 75, 1,1,1, 0.2);
+        serverWorld.spawnParticles(ParticleRegistry.BLUE_FLAME, target.getX(), target.getY(), target.getZ(), 75, 1,1,1, 0.2);
+
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 100, 1));
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1));
         target.addVelocity(0,0.35,0);
@@ -40,8 +44,8 @@ public class CopperAxe extends AxeItem {
     }
 
     @Override
-    public Rarity getRarity(ItemStack stack) {
-        return Rarity.EPIC;
+    public Text getName(ItemStack stack) {
+        return new TranslatableText(this.getTranslationKey(stack)).formatted(Formatting.YELLOW);
     }
 
     @Override

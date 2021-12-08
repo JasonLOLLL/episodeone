@@ -4,6 +4,7 @@ import com.jasonjat.episodeone.registry.EntityRegistry;
 import com.jasonjat.episodeone.registry.ItemRegistry;
 import com.jasonjat.episodeone.registry.ParticleRegistry;
 import net.fabricmc.api.ModInitializer;
+import software.bernie.example.GeckoLibMod;
 import software.bernie.geckolib3.GeckoLib;
 
 public class Episodeone implements ModInitializer {
@@ -13,6 +14,7 @@ public class Episodeone implements ModInitializer {
     @Override
     public void onInitialize() {
         GeckoLib.initialize();
+//        GeckoLibMod.DISABLE_IN_DEV = true;
         ItemRegistry.register();
         ParticleRegistry.register();
         EntityRegistry.register();

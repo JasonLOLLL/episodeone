@@ -28,7 +28,7 @@ public class CopperGolemEntity extends IronGolemEntity implements IAnimatable {
         if (animationEvent.isMoving()) {
             animationEvent.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.walk", true));
         } else {
-            animationEvent.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.idle", true));
+            animationEvent.getController().clearAnimationCache();
         }
         return PlayState.CONTINUE;
     }

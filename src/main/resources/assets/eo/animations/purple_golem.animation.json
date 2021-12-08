@@ -150,6 +150,51 @@
 		},
 		"animation.fire_golem.idle": {
 			"loop": true
+		},
+		"animation.fire_golem.slam": {
+			"animation_length": 0.5,
+			"bones": {
+				"spine": {
+					"rotation": {
+						"0.0": {
+							"vector": [-17.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [45, 0, 0]
+						}
+					}
+				},
+				"upper_arm_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [-57.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [-45, 0, 0]
+						}
+					}
+				},
+				"lower_arm_left": {
+					"rotation": {
+						"vector": [-37.5, 0, 0]
+					}
+				},
+				"upper_arm_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [-57.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [-45, 0, 0]
+						}
+					}
+				},
+				"lower_arm_right": {
+					"rotation": {
+						"vector": [-37.5, 0, 0]
+					}
+				}
+			}
 		}
 	}
 }
