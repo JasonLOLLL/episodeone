@@ -1,0 +1,97 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spongebob_boss.sprint": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"rig": {
+					"rotation": {
+						"0.0": {
+							"vector": [17.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [17.5, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -4, 0]
+						},
+						"0.0833": {
+							"vector": [0, -0.5, 0]
+						},
+						"0.25": {
+							"vector": [0, -4, 0]
+						},
+						"0.3333": {
+							"vector": [0, -0.5, 0]
+						},
+						"0.5": {
+							"vector": [0, -4, 0]
+						}
+					}
+				},
+				"upper_right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [70, 0, 0]
+						},
+						"0.25": {
+							"vector": [-72.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [70, 0, 0]
+						}
+					}
+				},
+				"upper_left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [-72.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [70, 0, 0]
+						},
+						"0.5": {
+							"vector": [-72.5, 0, 0]
+						}
+					}
+				},
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 1.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -1.5],
+							"easing": "linear"
+						},
+						"0.5": {
+							"vector": [0, 0, 1.5],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [-15, 0, 0]
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"vector": [65, 0, 0]
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"vector": [65, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.spongebob_boss.idle": {
+			"loop": true
+		}
+	}
+}
