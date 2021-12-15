@@ -1,19 +1,17 @@
 package com.jasonjat.episodeone.entity;
 
-import net.minecraft.block.BlockState;
+import com.jasonjat.episodeone.util.AnimationQueue;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.IAnimationTickable;
@@ -27,6 +25,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class SpongebobBossEntity extends HostileEntity implements IAnimatable, IAnimationTickable {
 
     private final AnimationFactory factory = new AnimationFactory(this);
+    private final AnimationQueue queue = new AnimationQueue(this);
     private final ServerBossBar bossBar;
 
     @Override
@@ -65,7 +64,7 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
 
     @Override
     public void registerControllers(AnimationData animationData) {
-        animationData.addAnimationController(new AnimationController<>(this, "controller", 20, this::predicate));
+        animationData.addAnimationController(new AnimationController<>(this, "controller", 5, event -> queue.tick(event, this::predicate)));
     }
 
     private <T extends IAnimatable> PlayState predicate(AnimationEvent<T> event) {
