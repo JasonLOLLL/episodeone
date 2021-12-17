@@ -9,11 +9,16 @@ import software.bernie.geckolib3.core.builder.AnimationBuilder;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 
+import javax.annotation.Nullable;
 import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Queue;
 
 public class AnimationQueue {
 
+    private final Map<String, Byte> animationById = new HashMap<>();
+    private final Map<Byte, String> idByAnimation = new HashMap<>();
     private final Queue<String> queue = new ArrayDeque<>();
     private final LivingEntity entity;
     private final World world;
@@ -24,9 +29,17 @@ public class AnimationQueue {
         this.world = entity.world;
     }
 
+    public void registerAnimation(String animation, int id) {
+        byte byteId = (byte) (id+100);
+        animationById.put(animation, byteId);
+        idByAnimation.put(byteId, animation);
+    }
+
     public void queueAnimation(String animation) {
         if (world.isClient) {
             queue.add(animation);
+        } else {
+            entity.world.sendEntityStatus(entity, animationById.get(animation));
         }
     }
 
@@ -48,5 +61,12 @@ public class AnimationQueue {
         }
 
         return fallback.test(event);
+    }
+
+    public void handleStatus(byte status) {
+        @Nullable String animation = idByAnimation.get(status);
+        if (animation != null) {
+            queueAnimation(animation);
+        }
     }
 }

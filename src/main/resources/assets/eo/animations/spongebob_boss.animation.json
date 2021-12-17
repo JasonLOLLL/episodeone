@@ -92,6 +92,41 @@
 		},
 		"animation.spongebob_boss.idle": {
 			"loop": true
+		},
+		"animation.spongebob_boss.slam": {
+			"animation_length": 0.5,
+			"bones": {
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [-17.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [25, 0, 0]
+						}
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-145, 0, 0]
+						},
+						"0.5": {
+							"vector": [-35, 0, 0]
+						}
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-145, 0, 0]
+						},
+						"0.5": {
+							"vector": [-35, 0, 0]
+						}
+					}
+				}
+			}
 		}
 	}
 }

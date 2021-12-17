@@ -34,6 +34,6 @@ public class EntityRegistry {
     public static void register() {
         FabricDefaultAttributeRegistry.register(COPPER_GOLEM_ENTITY, CopperGolemEntity.createMobAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25));
         FabricDefaultAttributeRegistry.register(PURPLE_GOLEM_ENTITY, PurpleGolemEntity.createIronGolemAttributes());
-        FabricDefaultAttributeRegistry.register(SPONGEBOB_BOSS_ENTITY, PurpleGolemEntity.createIronGolemAttributes());
+        FabricDefaultAttributeRegistry.register(SPONGEBOB_BOSS_ENTITY, SpongebobBossEntity.createSpongebobAttributes());
     }
 }
