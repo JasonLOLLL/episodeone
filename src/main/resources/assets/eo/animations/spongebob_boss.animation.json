@@ -1,0 +1,394 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spongebob_boss.sprint": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"rig": {
+					"rotation": {
+						"0.0": {
+							"vector": [17.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [17.5, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -4, 0]
+						},
+						"0.0833": {
+							"vector": [0, -0.5, 0]
+						},
+						"0.25": {
+							"vector": [0, -4, 0]
+						},
+						"0.3333": {
+							"vector": [0, -0.5, 0]
+						},
+						"0.5": {
+							"vector": [0, -4, 0]
+						}
+					}
+				},
+				"upper_right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [70, 0, 0]
+						},
+						"0.25": {
+							"vector": [-72.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [70, 0, 0]
+						}
+					}
+				},
+				"upper_left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [-72.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [70, 0, 0]
+						},
+						"0.5": {
+							"vector": [-72.5, 0, 0]
+						}
+					}
+				},
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 1.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -1.5],
+							"easing": "linear"
+						},
+						"0.5": {
+							"vector": [0, 0, 1.5],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [-15, 0, 0]
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"vector": [65, 0, 0]
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"vector": [65, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.spongebob_boss.idle": {
+			"loop": true
+		},
+		"animation.spongebob_boss.slam": {
+			"animation_length": 0.5,
+			"bones": {
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [-17.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [25, 0, 0]
+						}
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-145, 0, 0]
+						},
+						"0.5": {
+							"vector": [-35, 0, 0]
+						}
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-145, 0, 0]
+						},
+						"0.5": {
+							"vector": [-35, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.spongebob_boss.attack": {
+			"animation_length": 1,
+			"bones": {
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -25, 0]
+						},
+						"0.75": {
+							"vector": [0, 15, 0],
+							"easing": "easeInBack"
+						}
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-72.5, -90, 0]
+						},
+						"0.75": {
+							"vector": [-72.5, -10, 0],
+							"easing": "easeInBack"
+						}
+					}
+				},
+				"middle_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 80]
+						},
+						"0.75": {
+							"vector": [-25, 0, -2.5],
+							"easing": "easeInBack"
+						}
+					}
+				},
+				"lower_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.75": {
+							"vector": [0, 0, -5],
+							"easing": "easeInBack"
+						}
+					}
+				}
+			}
+		},
+		"animation.spongebob_boss.jump": {
+			"animation_length": 3,
+			"bones": {
+				"rig": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.25": {
+							"vector": [80, 0, 0],
+							"easing": "easeInExpo"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.25": {
+							"vector": [3, 3, 3],
+							"easing": "easeInQuint"
+						}
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [35, 0, 0],
+							"easing": "easeOutSine"
+						}
+					}
+				},
+				"left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [35, 0, 0],
+							"easing": "easeOutSine"
+						}
+					}
+				},
+				"pants": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"vector": [-132.5, 0, 0]
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"vector": [-132.5, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.spongebob_boss.pizza_throw": {
+			"animation_length": 0.5,
+			"bones": {
+				"rig": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [0, 52.5, 0]
+						},
+						"0.4583": {
+							"vector": [0, 10, 0],
+							"easing": "easeInQuint"
+						}
+					}
+				},
+				"lower_right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [16.80857, -26.48829, -7.6734]
+						}
+					}
+				},
+				"upper_left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [19.37006, -5.07855, 14.13272]
+						}
+					}
+				},
+				"lower_left_leg": {
+					"rotation": {
+						"vector": [5, 0, 0]
+					}
+				},
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-5, 0, 0]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [0, -42.5, 0]
+						},
+						"0.4583": {
+							"vector": [0, -10, 0],
+							"easing": "easeInQuint"
+						}
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [27.79354, 38.86967, 106.14054],
+							"easing": "easeInCubic"
+						},
+						"0.5": {
+							"vector": [-28.8811, 12.23853, 131.05079],
+							"easing": "easeInQuint"
+						}
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"middle_left_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-52.73242, -2.15393, 12.31594]
+						}
+					}
+				},
+				"lower_left_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-12.5, 0, 0]
+						}
+					}
+				},
+				"left_fist": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [0, -17.5, 0]
+						}
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-58.67179, -46.83105, -19.99574]
+						},
+						"0.5": {
+							"vector": [9.11491, -25.71278, -9.34832],
+							"easing": "easeInQuint"
+						}
+					}
+				},
+				"middle_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-7.5, 0, 0]
+						}
+					}
+				},
+				"lower_right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-10, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

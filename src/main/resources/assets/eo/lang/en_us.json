@@ -1,0 +1,18 @@
+{
+  "item.eo.copper_helmet": "Copper Helmet",
+  "item.eo.copper_chestplate": "Copper Chestplate",
+  "item.eo.copper_leggings": "Copper Leggings",
+  "item.eo.copper_boots": "Copper Boots",
+  "item.eo.copper_axe": "Copper Axe",
+  "item.eo.copper_pickaxe": "Copper Pickaxe",
+  "item.eo.testing_wand": "Testing Wand",
+  "item.eo.krabby_patty": "Krabby Patty",
+
+  "item.eo.copper_axe.tooltip": "A special little axe that does a cool effect!",
+
+  "entity.eo.copper_golem": "Copper Golem",
+  "entity.eo.purple_golem": "Purple Golem",
+  "entity.eo.spongebob_boss": "Spongebob",
+  "entity.eo.circle_blast": "Circle Blast Projectile",
+  "entity.eo.pizza_box": "Pizza Box Projectile"
+}
