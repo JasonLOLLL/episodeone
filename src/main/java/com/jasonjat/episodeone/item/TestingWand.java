@@ -3,6 +3,7 @@ package com.jasonjat.episodeone.item;
 import com.jasonjat.episodeone.entity.projectile.CircleBlastEntity;
 import com.jasonjat.episodeone.entity.projectile.PizzaBoxEntity;
 import com.jasonjat.episodeone.registry.EntityRegistry;
+import com.jasonjat.episodeone.registry.ItemRegistry;
 import com.jasonjat.episodeone.registry.ParticleRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EntityType;
@@ -27,7 +28,7 @@ public class TestingWand extends Item {
     public final int maxSelection = 2;
 
     public TestingWand() {
-        super(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1));
+        super(new FabricItemSettings().group(ItemRegistry.MOD_GROUP).maxCount(1));
     }
 
     @Override

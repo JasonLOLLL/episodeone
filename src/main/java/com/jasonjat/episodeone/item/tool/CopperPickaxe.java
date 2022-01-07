@@ -1,5 +1,6 @@
 package com.jasonjat.episodeone.item.tool;
 
+import com.jasonjat.episodeone.registry.ItemRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemGroup;
@@ -16,7 +17,7 @@ import net.minecraft.world.World;
 
 public class CopperPickaxe extends PickaxeItem {
     public CopperPickaxe() {
-        super(ToolMaterials.GOLD, 5, 2, new Settings().group(ItemGroup.TOOLS).maxDamage(800));
+        super(ToolMaterials.GOLD, 5, 2, new Settings().group(ItemRegistry.MOD_GROUP).maxDamage(800));
     }
 
     @Override

@@ -1,0 +1,20 @@
+{
+  "laugh": {
+    "subtitle": "subtitles.eo.laugh",
+    "sounds": [
+      "eo:laugh"
+    ]
+  },
+  "krustykrabpizza": {
+    "subtitle": "subtitles.eo.krustykrabpizza",
+    "sounds": [
+      "eo:krustykrabpizza"
+    ]
+  },
+  "krustykrabpizza2": {
+    "subtitle": "subtitles.eo.krustykrabpizza2",
+    "sounds": [
+      "eo:krustykrabpizza2"
+    ]
+  }
+}

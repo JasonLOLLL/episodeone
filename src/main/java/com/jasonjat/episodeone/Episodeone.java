@@ -3,6 +3,7 @@ package com.jasonjat.episodeone;
 import com.jasonjat.episodeone.registry.EntityRegistry;
 import com.jasonjat.episodeone.registry.ItemRegistry;
 import com.jasonjat.episodeone.registry.ParticleRegistry;
+import com.jasonjat.episodeone.registry.SoundRegistry;
 import net.fabricmc.api.ModInitializer;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -17,5 +18,6 @@ public class Episodeone implements ModInitializer {
         ItemRegistry.register();
         ParticleRegistry.register();
         EntityRegistry.register();
+        SoundRegistry.register();
     }
 }

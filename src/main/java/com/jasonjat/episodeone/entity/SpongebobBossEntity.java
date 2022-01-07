@@ -1,7 +1,9 @@
 package com.jasonjat.episodeone.entity;
 
 import com.jasonjat.episodeone.entity.goals.*;
+import com.jasonjat.episodeone.registry.SoundRegistry;
 import com.jasonjat.episodeone.util.AnimationQueue;
+import com.jasonjat.episodeone.util.ModUtil;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -10,10 +12,10 @@ import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -68,17 +70,19 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
     
     @Override
     protected void initGoals() {
-        goalSelector.add(0, new SpongebobAttackGoal(this, 1, false));
-        goalSelector.add(1, new SpongebobSlamGoal(this, 240, 20, 5));
-        goalSelector.add(1, new SpongebobPunchGoal(this, 20, 20, 5));
-        goalSelector.add(2, new SpongebobJumpAttackGoal(this, 300, 60, 15));
-        goalSelector.add(2, new SpongebobPizzaGoal(this, 60, 100, 15));
+        goalSelector.add(0, new SwimGoal(this));
+        goalSelector.add(1, new SpongebobAttackGoal(this, 1, false));
+        goalSelector.add(2, new SpongebobSlamGoal(this, 240, 20, 5));
+        goalSelector.add(2, new SpongebobPunchGoal(this, 20, 20, 5));
+        goalSelector.add(3, new SpongebobJumpAttackGoal(this, 300, 60, 15));
+        goalSelector.add(3, new SpongebobPizzaGoal(this, 60, 100, 15));
 
         goalSelector.add(5, new LookAroundGoal(this));
         goalSelector.add(5, new WanderAroundGoal(this, 0.6));
 
         targetSelector.add(1, new RevengeGoal(this));
         targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
+        targetSelector.add(3, new ActiveTargetGoal<>(this, AnimalEntity.class, false));
     }
 
     @Override
@@ -156,5 +160,13 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
 
     public float getSqMaxAttackDistance() {
         return (float) Math.pow(15, 2);
+    }
+
+    @Override
+    protected void playHurtSound(DamageSource source) {
+        if (!world.isClient) {
+//            ModUtil.playSound(world, this.getBlockPos(), SoundRegistry.LAUGH_EVENT);
+        }
+        super.playHurtSound(source);
     }
 }

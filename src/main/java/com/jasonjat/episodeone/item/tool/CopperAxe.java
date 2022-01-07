@@ -1,5 +1,6 @@
 package com.jasonjat.episodeone.item.tool;
 
+import com.jasonjat.episodeone.registry.ItemRegistry;
 import com.jasonjat.episodeone.registry.ParticleRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
@@ -30,7 +31,7 @@ import java.util.List;
 
 public class CopperAxe extends AxeItem {
     public CopperAxe() {
-        super(ToolMaterials.GOLD, 8, 1, new Settings().group(ItemGroup.TOOLS).maxDamage(800));
+        super(ToolMaterials.GOLD, 8, 1, new Settings().group(ItemRegistry.MOD_GROUP).maxDamage(800));
     }
 
     @Override
