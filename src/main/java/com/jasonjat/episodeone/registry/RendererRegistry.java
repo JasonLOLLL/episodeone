@@ -1,10 +1,7 @@
 package com.jasonjat.episodeone.registry;
 
 import com.jasonjat.episodeone.entity.renderer.*;
-import com.jasonjat.episodeone.util.ModUtil;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
-import net.minecraft.util.Identifier;
 
 public class RendererRegistry {
 
@@ -14,5 +11,6 @@ public class RendererRegistry {
         EntityRendererRegistry.register(EntityRegistry.SPONGEBOB_BOSS_ENTITY, SpongebobBossRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.CIRCLE_BLAST_ENTITY, CircleBlastEntityRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.PIZZA_BOX_ENTITY, PizzaBoxEntityRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.DOODLEBOB_ENTITY, DoodlebobEntityRenderer::new);
     }
 }

@@ -1,11 +1,15 @@
 package com.jasonjat.episodeone.entity.projectile;
 
 import com.jasonjat.episodeone.registry.EntityRegistry;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
@@ -68,6 +72,9 @@ public class PizzaBoxEntity extends PersistentProjectileEntity implements IAnima
     @Override
     public void tick() {
         if (age > 60) {
+            if (!world.isClient) {
+                ((ServerWorld) world).spawnParticles(ParticleTypes.FLAME, getX(), getY(), getZ(), 10, 0,0 ,0, 0);
+            }
             this.discard();
         }
 
@@ -76,19 +83,29 @@ public class PizzaBoxEntity extends PersistentProjectileEntity implements IAnima
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
-        if (getOwner()!=null && entityHitResult.getEntity().equals(getOwner())) {
-            System.out.println("AYO");
+        if (!world.isClient && getOwner()!=null && !getOwner().equals(entityHitResult.getEntity())) {
+            entityHitResult.getEntity().setOnFireFor(3);
+            explode(getPos());
+            this.discard();
         }
-        System.out.println(getOwner());
+
         super.onEntityHit(entityHitResult);
     }
 
     @Override
-    protected void onCollision(HitResult hitResult) {
-        if (!world.isClient && !hitResult.getType().equals(HitResult.Type.ENTITY)) {
-            Vec3d pos = hitResult.getPos();
-            world.createExplosion(this, pos.x, pos.y, pos.z, 1, Explosion.DestructionType.BREAK);
+    protected void onBlockCollision(BlockState state) {
+
+        if (!world.isClient && !state.isAir()) {
+            explode(getPos());
+            this.discard();
         }
-        super.onCollision(hitResult);
+
+        super.onBlockCollision(state);
     }
+
+    private void explode(Vec3d pos) {
+        world.createExplosion(this, pos.x, pos.y, pos.z, 1, Explosion.DestructionType.BREAK);
+    }
+
+
 }

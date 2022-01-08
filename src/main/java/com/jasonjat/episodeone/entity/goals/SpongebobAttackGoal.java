@@ -44,7 +44,6 @@ public class SpongebobAttackGoal extends Goal {
 
     @Override
     public boolean canStart() {
-        System.out.println("canStart() attackgoal trigger");
 
         if (spongebob.performingAttack) return false;
 
@@ -95,7 +94,6 @@ public class SpongebobAttackGoal extends Goal {
 
     @Override
     public void start() {
-        System.out.println("began attackgoal");
 
         this.spongebob.getLookControl().lookAt(spongebob.getTarget(), 30, 30);
         spongebob.getNavigation().startMovingTo(spongebob.getTarget(), speed);

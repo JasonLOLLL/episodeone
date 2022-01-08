@@ -1,6 +1,7 @@
 package com.jasonjat.episodeone.registry;
 
 import com.jasonjat.episodeone.entity.CopperGolemEntity;
+import com.jasonjat.episodeone.entity.DoodlebobEntity;
 import com.jasonjat.episodeone.entity.PurpleGolemEntity;
 import com.jasonjat.episodeone.entity.SpongebobBossEntity;
 import com.jasonjat.episodeone.entity.projectile.CircleBlastEntity;
@@ -45,10 +46,17 @@ public class EntityRegistry {
             FabricEntityTypeBuilder.<PizzaBoxEntity>create(SpawnGroup.MISC, PizzaBoxEntity::new).dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10).build()
     );
 
+    public static final EntityType<DoodlebobEntity> DOODLEBOB_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            ModUtil.id("doodlebob"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, DoodlebobEntity::new).dimensions(EntityDimensions.fixed(1F, 1.1F)).build()
+    );
+
 
     public static void register() {
         FabricDefaultAttributeRegistry.register(COPPER_GOLEM_ENTITY, CopperGolemEntity.createMobAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25));
         FabricDefaultAttributeRegistry.register(PURPLE_GOLEM_ENTITY, PurpleGolemEntity.createIronGolemAttributes());
         FabricDefaultAttributeRegistry.register(SPONGEBOB_BOSS_ENTITY, SpongebobBossEntity.createSpongebobAttributes());
+        FabricDefaultAttributeRegistry.register(DOODLEBOB_ENTITY, DoodlebobEntity.createDoodlebobAttributes());
     }
 }

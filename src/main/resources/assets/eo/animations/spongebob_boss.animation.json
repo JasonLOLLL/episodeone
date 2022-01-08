@@ -388,6 +388,51 @@
 					}
 				}
 			}
+		},
+		"animation.spongebob_boss.summon": {
+			"animation_length": 0.5,
+			"bones": {
+				"pants": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-10, 0, 0]
+						}
+					}
+				},
+				"upper_left_arm": {
+					"rotation": {
+						"vector": [0, 0, 110]
+					}
+				},
+				"middle_left_arm": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"lower_left_arm": {
+					"rotation": {
+						"vector": [0, 0, 17.5]
+					}
+				},
+				"upper_right_arm": {
+					"rotation": {
+						"vector": [0, 0, -110]
+					}
+				},
+				"middle_right_arm": {
+					"rotation": {
+						"vector": [0, 0, -40]
+					}
+				},
+				"lower_right_arm": {
+					"rotation": {
+						"vector": [0, 0, -17.5]
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2

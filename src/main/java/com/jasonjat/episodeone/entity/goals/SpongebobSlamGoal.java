@@ -22,7 +22,6 @@ public class SpongebobSlamGoal extends SpongebobGoal {
     @Override
     public void start() {
         super.start();
-        System.out.println("Slam started!");
     }
 
     @Override

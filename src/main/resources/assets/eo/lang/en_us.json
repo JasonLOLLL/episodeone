@@ -8,6 +8,7 @@
   "item.eo.testing_wand": "Testing Wand",
   "item.eo.krabby_patty": "Krabby Patty",
   "item.eo.spongebob_spawn_egg": "Spongebob Spawn Egg",
+  "item.eo.doodlebob_spawn_egg": "Doodlebob Spawn Egg",
 
   "item.eo.copper_axe.tooltip": "A special little axe that does a cool effect!",
   "itemGroup.eo.general": "Spongebob Mod",
@@ -18,5 +19,6 @@
   "entity.eo.purple_golem": "Purple Golem",
   "entity.eo.spongebob_boss": "Spongebob",
   "entity.eo.circle_blast": "Circle Blast Projectile",
-  "entity.eo.pizza_box": "Pizza Box Projectile"
+  "entity.eo.pizza_box": "Pizza Box Projectile",
+  "entity.eo.doodlebob": "Doodlebob"
 }

@@ -29,6 +29,7 @@ public class ItemRegistry {
     public static final Item KRABBY_PATTY = new KrabbyPatty();
 
     public static final Item SPONGEBOB_SPAWN_EGG = new SpawnEggItem(EntityRegistry.SPONGEBOB_BOSS_ENTITY, 16776274, 0, new Item.Settings().group(MOD_GROUP));
+    public static final Item DOODLEBOB_SPAWN_EGG = new SpawnEggItem(EntityRegistry.DOODLEBOB_ENTITY, 16777215, 0, new Item.Settings().group(MOD_GROUP));
 
     public static void register() {
         Registry.register(Registry.ITEM, ModUtil.id("copper_helmet"), COPPER_HELMET);
@@ -40,6 +41,7 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, ModUtil.id("testing_wand"), TESTING_WAND);
         Registry.register(Registry.ITEM, ModUtil.id("krabby_patty"), KRABBY_PATTY);
         Registry.register(Registry.ITEM, ModUtil.id("spongebob_spawn_egg"), SPONGEBOB_SPAWN_EGG);
+        Registry.register(Registry.ITEM, ModUtil.id("doodlebob_spawn_egg"), DOODLEBOB_SPAWN_EGG);
 
     }
 }

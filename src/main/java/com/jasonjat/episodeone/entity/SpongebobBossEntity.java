@@ -35,6 +35,7 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
     public static final String ANIMATION_ATTACK = "animation.spongebob_boss.attack";
     public static final String ANIMATION_JUMP = "animation.spongebob_boss.jump";
     public static final String ANIMATION_THROW = "animation.spongebob_boss.pizza_throw";
+    public static final String ANIMATION_SUMMON = "animation.spongebob_boss.summon";
 
     private final AnimationFactory factory = new AnimationFactory(this);
     private final AnimationQueue queue = new AnimationQueue(this);
@@ -54,6 +55,7 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
         queue.registerAnimation(ANIMATION_ATTACK, 1);
         queue.registerAnimation(ANIMATION_JUMP, 2);
         queue.registerAnimation(ANIMATION_THROW, 3);
+        queue.registerAnimation(ANIMATION_SUMMON, 4);
     }
 
     public static DefaultAttributeContainer.Builder createSpongebobAttributes() {
@@ -74,8 +76,9 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
         goalSelector.add(1, new SpongebobAttackGoal(this, 1, false));
         goalSelector.add(2, new SpongebobSlamGoal(this, 240, 20, 5));
         goalSelector.add(2, new SpongebobPunchGoal(this, 20, 20, 5));
-        goalSelector.add(3, new SpongebobJumpAttackGoal(this, 300, 60, 15));
-        goalSelector.add(3, new SpongebobPizzaGoal(this, 60, 100, 15));
+        goalSelector.add(2, new SpongebobJumpAttackGoal(this, 300, 60, 15));
+        goalSelector.add(2, new SpongebobPizzaGoal(this, 200, 100, 15));
+        goalSelector.add(2, new SpongebobMinionGoal(this, 500, 20, 10));
 
         goalSelector.add(5, new LookAroundGoal(this));
         goalSelector.add(5, new WanderAroundGoal(this, 0.6));

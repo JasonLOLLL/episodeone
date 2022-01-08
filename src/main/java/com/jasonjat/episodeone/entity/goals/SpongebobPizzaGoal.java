@@ -3,8 +3,6 @@ package com.jasonjat.episodeone.entity.goals;
 import com.jasonjat.episodeone.entity.SpongebobBossEntity;
 import com.jasonjat.episodeone.entity.projectile.PizzaBoxEntity;
 import com.jasonjat.episodeone.registry.SoundRegistry;
-import com.jasonjat.episodeone.util.ModUtil;
-import net.minecraft.client.realms.dto.WorldDownload;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.Vec3d;
@@ -36,14 +34,22 @@ public class SpongebobPizzaGoal extends SpongebobGoal {
     @Override
     public void attack(LivingEntity target) {
         if (ticks%10==0) {
-            PizzaBoxEntity pizzaBox = new PizzaBoxEntity(spongebob, world);
-            pizzaBox.setPosition(spongebob.getPos().add(0, 1.5, 0));
-            Vec3d velocityVector = target.getPos().subtract(spongebob.getPos()).normalize(); // subtract the target's pos from spongebob to get the vector
-            pizzaBox.setVelocity(velocityVector);
-            pizzaBox.velocityDirty = true;
-            pizzaBox.velocityModified = true;
-            world.spawnEntity(pizzaBox);
-            playAnimation();
+            throwPizza(target);
         }
+
+        if (ticks%10==1) {
+            throwPizza(target);
+        }
+    }
+
+    private void throwPizza(LivingEntity target) {
+        PizzaBoxEntity pizzaBox = new PizzaBoxEntity(spongebob, world);
+        pizzaBox.setPosition(spongebob.getPos().add(0, 1.5, 0));
+        Vec3d velocityVector = target.getPos().subtract(0,1,0).subtract(spongebob.getPos()).normalize(); // subtract the target's pos from spongebob to get the vector
+        pizzaBox.setVelocity(velocityVector);
+        pizzaBox.velocityDirty = true;
+        pizzaBox.velocityModified = true;
+        world.spawnEntity(pizzaBox);
+        playAnimation();
     }
 }
