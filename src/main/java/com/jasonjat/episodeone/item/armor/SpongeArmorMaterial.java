@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class CopperArmorMaterial implements ArmorMaterial {
+public class SpongeArmorMaterial implements ArmorMaterial {
     private static final int[] BASE_DURABILITY = new int[] {80,90,85,75};
     private static final int[] PROTECTION_VALUES = new int[] {3, 5, 4, 2};
 
@@ -28,17 +28,17 @@ public class CopperArmorMaterial implements ArmorMaterial {
 
     @Override
     public SoundEvent getEquipSound() {
-        return SoundEvents.BLOCK_COPPER_PLACE;
+        return SoundEvents.BLOCK_WET_GRASS_PLACE;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.COPPER_INGOT);
+        return Ingredient.ofItems(Items.SPONGE);
     }
 
     @Override
     public String getName() {
-        return "copper_armor";
+        return "sponge_armor";
     }
 
     @Override

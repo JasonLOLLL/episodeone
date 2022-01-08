@@ -5,13 +5,12 @@ import net.minecraft.command.argument.EntityAnchorArgumentType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.server.world.ServerWorld;
-import org.jetbrains.annotations.Nullable;
 
 public abstract class SpongebobGoal extends Goal {
     protected final SpongebobBossEntity spongebob;
     protected final ServerWorld world;
-    private long lastTimeAttacked;
-    private final int cooldown;
+    public long lastTimeAttacked; //todo change these to private
+    public final int cooldown;
     protected final int goalTime;
     protected int ticks;
     private final float maxAttackDistance;
@@ -32,7 +31,7 @@ public abstract class SpongebobGoal extends Goal {
         }
 
         // Intermission interval between attacks, otherwise attacks will be constantly running one after another
-        if (world.getTime() - spongebob.lastAttackTime > SpongebobBossEntity.INTERMISSION_TIME && !spongebob.performingAttack) {
+        if (!spongebob.performingAttack) {
             if (spongebob.getTarget() != null && spongebob.getTarget().isAlive()) {
                 // Check distance and if distance requirement is met, return true
                 return getMaxAttackDistance() >= spongebob.distanceTo(spongebob.getTarget());

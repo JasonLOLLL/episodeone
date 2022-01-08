@@ -31,7 +31,7 @@ public abstract class PlayerEntityMixin {
         boolean check = false;
         for (ItemStack armor : armorItems) {
             if (armor.getItem() instanceof ArmorItem armorItem) {
-                check = armorItem.getMaterial() == ItemRegistry.COPPER_ARMOR_MATERIAL;
+                check = armorItem.getMaterial() == ItemRegistry.SPONGE_ARMOR_MATERIAL;
             } else {
                 check = false;
                 break;

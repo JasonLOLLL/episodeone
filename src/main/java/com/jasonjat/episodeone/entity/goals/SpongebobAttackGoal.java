@@ -50,7 +50,6 @@ public class SpongebobAttackGoal extends Goal {
         long worldTime = this.spongebob.world.getTime();
 
         if (worldTime - lastUpdateTime < 20L) {
-            System.out.println(101);
             return false;
         } else {
             lastUpdateTime = worldTime;
@@ -58,15 +57,12 @@ public class SpongebobAttackGoal extends Goal {
 
             // attack range
             if (target == null || !target.isAlive()) {
-                System.out.println(102);
                 return false;
             } else {
                 path = spongebob.getNavigation().findPathTo(target, 0);
                 if (path!=null) {
-                    System.out.println(103);
                     return true;
                 } else {
-                    System.out.println(104);
                     return getSquaredMaxAttackDistance() >= spongebob.squaredDistanceTo(target.getX(), target.getY(), target.getZ());
                 }
             }
@@ -77,7 +73,6 @@ public class SpongebobAttackGoal extends Goal {
     public boolean shouldContinue() {
         LivingEntity target = this.spongebob.getTarget();
 
-        if (target!=null) System.out.println(spongebob.getSqMaxAttackDistance() >= spongebob.squaredDistanceTo(target));
         // goal continues if target is valid & alive and within reachable distance
         if (target == null || !target.isAlive()) {
             return false;

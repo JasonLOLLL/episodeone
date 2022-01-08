@@ -1,6 +1,7 @@
 package com.jasonjat.episodeone.entity;
 
 import com.jasonjat.episodeone.entity.goals.*;
+import com.jasonjat.episodeone.registry.ItemRegistry;
 import com.jasonjat.episodeone.registry.SoundRegistry;
 import com.jasonjat.episodeone.util.AnimationQueue;
 import com.jasonjat.episodeone.util.ModUtil;
@@ -64,7 +65,7 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 100)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 10)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5)
                 .add(EntityAttributes.GENERIC_ARMOR, 1)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 1)
                 .add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, 2);
@@ -73,7 +74,7 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
     @Override
     protected void initGoals() {
         goalSelector.add(0, new SwimGoal(this));
-        goalSelector.add(1, new SpongebobAttackGoal(this, 1, false));
+        goalSelector.add(1, new SpongebobAttackGoal(this, 1.5, false));
         goalSelector.add(2, new SpongebobSlamGoal(this, 240, 20, 5));
         goalSelector.add(2, new SpongebobPunchGoal(this, 20, 20, 5));
         goalSelector.add(2, new SpongebobJumpAttackGoal(this, 300, 60, 15));
@@ -171,5 +172,11 @@ public class SpongebobBossEntity extends HostileEntity implements IAnimatable, I
 //            ModUtil.playSound(world, this.getBlockPos(), SoundRegistry.LAUGH_EVENT);
         }
         super.playHurtSound(source);
+    }
+
+    @Override
+    public void onDeath(DamageSource source) {
+        this.dropItem(ItemRegistry.KRABBY_PATTY);
+        super.onDeath(source);
     }
 }

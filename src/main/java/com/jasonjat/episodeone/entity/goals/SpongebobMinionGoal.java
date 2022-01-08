@@ -19,13 +19,6 @@ public class SpongebobMinionGoal extends SpongebobGoal {
     }
 
     @Override
-    public boolean canStart() {
-        boolean a = super.canStart();
-        System.out.println("canStart() " + a);
-        return a;
-    }
-
-    @Override
     public void attack(LivingEntity target) {
         int amt = 4;
         int radius = 2;
@@ -37,7 +30,7 @@ public class SpongebobMinionGoal extends SpongebobGoal {
             double z = Math.sin(angle) * radius + spongebob.getZ();
 
             DoodlebobEntity doodlebob = new DoodlebobEntity(EntityRegistry.DOODLEBOB_ENTITY, world);
-            doodlebob.setPos(x, spongebob.getY(), z);
+            doodlebob.setPos(x, spongebob.getY() + 1, z);
             doodlebob.setTarget(target);
             doodlebob.isSpawnedByBoss = true;
             world.spawnEntity(doodlebob);

@@ -1,8 +1,8 @@
 {
-  "item.eo.copper_helmet": "Copper Helmet",
-  "item.eo.copper_chestplate": "Copper Chestplate",
-  "item.eo.copper_leggings": "Copper Leggings",
-  "item.eo.copper_boots": "Copper Boots",
+  "item.eo.sponge_helmet": "Sponge Helmet",
+  "item.eo.sponge_chestplate": "Sponge Chestplate",
+  "item.eo.sponge_leggings": "Sponge Leggings",
+  "item.eo.sponge_boots": "Sponge Boots",
   "item.eo.copper_axe": "Copper Axe",
   "item.eo.copper_pickaxe": "Copper Pickaxe",
   "item.eo.testing_wand": "Testing Wand",
@@ -14,6 +14,8 @@
   "itemGroup.eo.general": "Spongebob Mod",
   "subtitles.eo.laugh": "Spongebob Laugh",
   "subtitles.eo.krustykrabpizza": "Spongebob sings Krusty Krab",
+  "advancements.eo.sponge_armor.title": "Become Sponge",
+  "advancements.eo.sponge_armor.description": "Gather all the Sponge Armor Pieces",
 
   "entity.eo.copper_golem": "Copper Golem",
   "entity.eo.purple_golem": "Purple Golem",

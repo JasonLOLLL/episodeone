@@ -6,6 +6,7 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
@@ -60,5 +61,13 @@ public class DoodlebobEntity extends HostileEntity implements IAnimatable {
             ((ServerWorld) world).spawnParticles(ParticleTypes.SMOKE, getX(), getY(), getZ(), 15, 0.1,0.1,0.1,0.1);
             this.discard();
         }
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (source.getAttacker()!=null) {
+            this.setHealth(0);
+        }
+        return super.damage(source, amount);
     }
 }

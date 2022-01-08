@@ -2,14 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "XXX",
+    "X X",
     "X X"
   ],
   "key": {
     "X": {
-      "item": "minecraft:copper_ingot"
+      "item": "minecraft:sponge"
     }
   },
   "result": {
-    "item": "eo:copper_helmet"
+    "item": "eo:sponge_leggings"
   }
 }

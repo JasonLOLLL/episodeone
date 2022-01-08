@@ -6,10 +6,10 @@
   ],
   "key": {
     "X": {
-      "item": "minecraft:copper_ingot"
+      "item": "minecraft:sponge"
     }
   },
   "result": {
-    "item": "eo:copper_boots"
+    "item": "eo:sponge_boots"
   }
 }
